@@ -1,0 +1,70 @@
+
+
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 600px;
+    height: 200px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+input {
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+    height: 80px;
+    font-size: 20px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4871fa;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    margin-top: 50px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete, .update {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.delete {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.update {
+    background-color: #2196F3;
+    color: #fff;
+}

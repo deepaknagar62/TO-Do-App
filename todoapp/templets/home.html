@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-App</title>
+    <link rel="stylesheet" href="static/CSS/home.css">
+</head>
+
+<body>
+    <header style="height: 100px; width:100%;padding:0%; background-color: #4caf50; "></header>
+   
+   <div style="margin: 0 auto; margin-top:50px; max-width: 600px;"> 
+   
+    <div class="container">
+    <h1>To-Do App</h1>
+    <div style="margin-bottom: -13px;"><h3>Add new Task</h3></div>
+    <div>
+        <form action="{% url 'home' %}" method="POST">
+            {% csrf_token %}
+        <input type="text" id="taskInput" name="taskInput"  placeholder="Enter a new task">
+        <button style="background-color: rgb(80, 149, 240); font-size:16px" type="submit">Add Task</button>
+    </form>
+    </div>
+  </div>
+</div>
+  <div>
+    <table style="font-size: 20px;">
+        <thead>
+            <tr>
+                <th style="width: 100px;">S.No.</th>
+                <th>Task</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="taskList">
+            
+            {% for task in all_tasks %}
+            <tr>  
+            <td>{{ forloop.counter}}</td>
+            <td>{{ task.task }}</td>
+            <td> <a href="delete-task/{{task.id}}"><button style="background-color: rgb(182, 37, 37);font-size:16px">Delete</button></a>
+               <a href="update-task/{{task.id}}"> <button style="background-color: rgb(72, 72, 146); margin-left: 15px; font-size:16px">Update</button></a> 
+            </td>
+           </tr>
+           {% endfor %}
+            
+        </tbody>
+    </table>
+  </div>
+</body>
+</html>

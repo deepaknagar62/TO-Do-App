@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Page...</title>
+    
+</head>
+<style>
+    .container{
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 600px;
+        height: 200px;
+    }
+    .container h1 {
+        text-align: center;
+        color: #333;
+    }
+    
+    .container input {
+        width: 70%;
+        padding: 10px;
+        margin-right: 10px;
+        height: 80px;
+        font-size: 20px;
+    }
+    
+    .container button {
+        padding: 10px;
+        background-color: #4871fa;
+        color: #fff;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+
+</style>
+
+<body>
+    <header style="height: 100px; width:100%;padding:0%; background-color: #4caf50; "></header>
+    <div style="margin: 0 auto; margin-top:50px; max-width: 600px;"> 
+   
+        <div class="container">
+        <h1>To-Do App</h1>
+        <div>
+            <form action="{% url 'do_update_task' task.id %}" method="POST">
+                {% csrf_token %}
+            <input type="text" id="taskInput2" name="taskInput2"  value="{{task.task}}">
+            <button style="background-color: rgb(80, 149, 240); font-size:16px" type="submit">Update</button>
+        </form>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
